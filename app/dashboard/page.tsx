@@ -28,7 +28,7 @@ export default function Dashboard() {
 
       try {
         const response = await fetch(
-          "http://localhost:30299/api/verification-stats",
+          "https://pharma-backend-h710.onrender.com/api/verification-stats",
           {
             headers: {
               Authorization: `Bearer ${user.token}`,

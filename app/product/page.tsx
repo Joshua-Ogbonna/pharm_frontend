@@ -43,7 +43,7 @@ const CreateProduct = () => {
     try {
       const token = localStorage.getItem('token'); // Assuming token is stored in localStorage
       
-      const response = await fetch('http://localhost:30299/api/generate-qr', {
+      const response = await fetch('https://pharma-backend-h710.onrender.com/api/generate-qr', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

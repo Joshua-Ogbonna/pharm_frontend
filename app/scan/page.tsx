@@ -91,7 +91,7 @@ export default function ScanPage() {
     if (!user) return;
 
     try {
-      const response = await fetch("http://localhost:30299/api/verify-qr", {
+      const response = await fetch("https://pharma-backend-h710.onrender.com/api/verify-qr", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -38,7 +38,7 @@ export default function AdminDashboard() {
       if (!user) return;
 
       try {
-        const response = await fetch("http://localhost:30299/api/admin/stats", {
+        const response = await fetch("https://pharma-backend-h710.onrender.com/api/admin/stats", {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },

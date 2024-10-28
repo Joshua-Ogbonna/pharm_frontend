@@ -6,7 +6,7 @@ interface User {
 }
 
 export const login = async (email: string, password: string): Promise<User> => {
-  const response = await fetch('http://localhost:30299/api/login', {
+  const response = await fetch('https://pharma-backend-h710.onrender.com/api/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password }),
@@ -34,7 +34,7 @@ export const login = async (email: string, password: string): Promise<User> => {
 };
 
 export const register = async (email: string, password: string, role: string): Promise<void> => {
-  const response = await fetch('http://localhost:30299/api/register', {
+  const response = await fetch('https://pharma-backend-h710.onrender.com/api/register', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password, role }),

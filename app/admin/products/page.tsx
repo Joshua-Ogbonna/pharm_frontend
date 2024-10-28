@@ -51,7 +51,7 @@ export default function ProductsManagement() {
     if (!user) return;
 
     try {
-      const response = await fetch("http://localhost:30299/api/admin/products", {
+      const response = await fetch("https://pharma-backend-h710.onrender.com/api/admin/products", {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -78,7 +78,7 @@ export default function ProductsManagement() {
     if (!user) return;
 
     try {
-      const response = await fetch("http://localhost:30299/api/generate-qr", {
+      const response = await fetch("https://pharma-backend-h710.onrender.com/api/generate-qr", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
