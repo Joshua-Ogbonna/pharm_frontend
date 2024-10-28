@@ -1,13 +1,11 @@
 "use client"
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import Image from 'next/image';
 
 interface ProductFormData {
   name: string;
@@ -18,7 +16,7 @@ interface ProductFormData {
 
 const CreateProduct = () => {
   const { toast } = useToast();
-  const router = useRouter();
+//   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [qrCode, setQrCode] = useState<string>('');
   const [formData, setFormData] = useState<ProductFormData>({
@@ -69,6 +67,7 @@ const CreateProduct = () => {
         description: "Product created successfully with QR code",
       });
     } catch (error) {
+        console.log(error)
       toast({
         title: "Error",
         description: "Failed to create product. Please try again.",

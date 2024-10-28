@@ -43,6 +43,7 @@ export default function ProductsManagement() {
     expirationDate: "",
   });
   const { toast } = useToast();
+  console.log(loading)
 
   useEffect(() => {
     fetchProducts();
@@ -64,6 +65,7 @@ export default function ProductsManagement() {
       const data = await response.json();
       setProducts(data);
     } catch (error) {
+      console.log(error)
       toast({
         title: "Error",
         description: "Failed to fetch products",
@@ -92,6 +94,7 @@ export default function ProductsManagement() {
       if (!response.ok) throw new Error("Failed to create product");
 
       const data = await response.json();
+      console.log(data)
 
       toast({
         title: "Success",
@@ -107,6 +110,7 @@ export default function ProductsManagement() {
       });
       fetchProducts();
     } catch (error) {
+      console.log(error)
       toast({
         title: "Error",
         description: "Failed to create product",

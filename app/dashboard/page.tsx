@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
 import ProtectedLayout from "@/layouts/ProtectedLayout";
@@ -13,13 +13,18 @@ interface VerificationStats {
   invalidProducts: number;
 }
 
+interface StatsItem {
+  _id: string;
+  count: number;
+}
+
 export default function Dashboard() {
   const [stats, setStats] = useState<VerificationStats>({
     recentScans: 0,
     validProducts: 0,
     invalidProducts: 0,
   });
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {
     const fetchStats = async () => {
@@ -40,13 +45,13 @@ export default function Dashboard() {
         // Transform the data into our stats format
         const statsData = {
           recentScans: data.reduce(
-            (acc: number, curr: any) => acc + curr.count,
+            (acc: number, curr: { count: number }) => acc + curr.count,
             0
           ),
           validProducts:
-            data.find((item: any) => item._id === "valid")?.count || 0,
+            data.find((item: StatsItem) => item._id === "valid")?.count || 0,
           invalidProducts:
-            data.find((item: any) => item._id === "invalid")?.count || 0,
+            data.find((item: StatsItem) => item._id === "invalid")?.count || 0,
         };
 
         setStats(statsData);
