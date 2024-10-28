@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useState } from "react";
 import ProtectedLayout from "@/layouts/ProtectedLayout";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";

@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useEffect } from "react";
 import ProtectedLayout from "@/layouts/ProtectedLayout";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
@@ -18,7 +20,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { getUser } from "@/lib/auth";
 
 interface Product {
